@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Rajaram Shivhare — Property Consultant, Banda UP. 30+ saal se Banda district mein plot, agricultural land, makaan aur commercial property ki khareed-farokht.">
-<meta name="keywords" content="property dealer Banda UP, zameen broker Banda, plot Banda Uttar Pradesh, real estate Banda, property consultant Banda">
+<meta name="keywords" content="property dealer Banda UP, zameen broker Banda, plot Banda Uttar Pradesh, real estate Banda, property consultant Banda, plot medical line Banda, indira nagar house Banda">
 <title>Banda Property — Rajaram Shivhare</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #1a1510;
@@ -21,14 +21,12 @@
     --accent-light: #f0d4b8;
     --green: #3a6b4a;
     --green-light: #d4e8da;
-    --border: rgba(26,21,16,0.12);
-    --border-strong: rgba(26,21,16,0.25);
+    --border: rgba(26,21,16,0.1);
+    --border-strong: rgba(26,21,16,0.22);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--paper);
@@ -38,809 +36,371 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(250,247,242,0.92);
-    backdrop-filter: blur(12px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,247,242,0.94);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
-    padding: 0 5vw;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 5vw; height: 62px;
+    display: flex; align-items: center; justify-content: space-between;
   }
-
   .nav-logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 17px;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.01em;
+    font-size: 18px; color: var(--ink); text-decoration: none;
   }
-
   .nav-logo span { color: var(--accent); }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    list-style: none;
-  }
-
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
   .nav-links a {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink-soft);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 20px;
-    transition: all 0.2s;
-    letter-spacing: 0.01em;
+    font-size: 13px; font-weight: 400; color: var(--ink-soft);
+    text-decoration: none; padding: 6px 13px; border-radius: 20px; transition: all 0.2s;
   }
-
   .nav-links a:hover { background: var(--paper-deep); color: var(--ink); }
-
   .nav-wa {
-    background: var(--green) !important;
-    color: white !important;
-    font-weight: 500 !important;
-    padding: 7px 16px !important;
+    background: var(--green) !important; color: white !important;
+    font-weight: 500 !important; padding: 7px 18px !important;
   }
-
   .nav-wa:hover { background: #2d5a3c !important; }
-
   .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
+    display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
   }
-
   .hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--ink);
-    border-radius: 2px;
-    transition: all 0.3s;
+    display: block; width: 22px; height: 2px;
+    background: var(--ink); border-radius: 2px; transition: all 0.3s;
   }
 
-  /* HERO */
-  #ghar {
-    min-height: 100vh;
-    padding: 100px 5vw 80px;
-    display: flex;
-    align-items: center;
-    background: var(--paper);
-    position: relative;
-    overflow: hidden;
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none; position: fixed; top: 62px; left: 0; right: 0; bottom: 0;
+    background: var(--paper); z-index: 99;
+    padding: 32px 5vw; flex-direction: column; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 17px; color: var(--ink); text-decoration: none;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu .mobile-wa {
+    margin-top: 20px; background: var(--green); color: white;
+    padding: 16px 24px; border-radius: 4px; text-align: center;
+    font-weight: 500; border: none;
   }
 
-  #ghar::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
-    opacity: 0.4;
-    pointer-events: none;
+  /* ── HOME (merged hero + about) ── */
+  #home {
+    min-height: 100vh; padding: 110px 5vw 90px;
+    background: var(--paper); position: relative; overflow: hidden;
+  }
+  #home::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, var(--accent-light) 0%, transparent 68%);
+    opacity: 0.35; pointer-events: none;
+  }
+  .home-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px; align-items: center;
   }
 
-  .hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-text {}
-
+  /* left col */
+  .home-left {}
   .hero-tag {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 28px;
+    display: inline-block; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-light);
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 26px;
   }
-
   .hero-h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 4vw, 52px);
-    line-height: 1.2;
-    color: var(--ink);
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
+    font-size: clamp(30px, 3.8vw, 50px);
+    line-height: 1.18; color: var(--ink); margin-bottom: 22px;
+    letter-spacing: -0.015em;
   }
-
-  .hero-h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
+  .hero-h1 em { font-style: italic; color: var(--accent); }
   .hero-sub {
-    font-size: 17px;
-    color: var(--ink-soft);
-    line-height: 1.75;
-    margin-bottom: 36px;
-    max-width: 440px;
+    font-size: 16px; color: var(--ink-soft); line-height: 1.8;
+    margin-bottom: 20px; max-width: 460px;
   }
-
-  .hero-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  .about-quote {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 17px; color: var(--ink-soft); line-height: 1.6;
+    border-left: 3px solid var(--accent); padding-left: 18px;
+    margin: 24px 0 32px; max-width: 460px;
   }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--green);
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.2s;
-    letter-spacing: 0.01em;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green); color: white; text-decoration: none;
+    padding: 14px 28px; border-radius: 4px; font-size: 15px;
+    font-weight: 500; transition: all 0.2s;
   }
-
   .btn-primary:hover { background: #2d5a3c; transform: translateY(-1px); }
-
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 400;
-    border: 1px solid var(--border-strong);
-    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--ink); text-decoration: none;
+    padding: 14px 28px; border-radius: 4px; font-size: 15px;
+    border: 1px solid var(--border-strong); transition: all 0.2s;
   }
-
   .btn-secondary:hover { background: var(--paper-deep); }
 
-  .hero-photo-wrap {
+  /* right col */
+  .home-right { display: flex; flex-direction: column; gap: 20px; }
+  .photo-frame {
+    width: 100%; aspect-ratio: 3/4; max-height: 400px;
+    background: var(--paper-deep); border-radius: 10px;
+    overflow: hidden; border: 1px solid var(--border);
     position: relative;
-    display: flex;
-    justify-content: center;
   }
-
-  .hero-photo-frame {
-    width: 340px;
-    height: 420px;
-    background: var(--paper-deep);
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid var(--border);
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
   }
-
-  .hero-photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  .hero-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
     color: var(--ink-muted);
   }
-
-  .hero-photo-placeholder .avatar-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: var(--paper-warm);
-    border: 2px solid var(--border-strong);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    color: var(--accent);
+  .avatar-initials {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--accent-light); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--accent);
   }
-
-  .hero-badge {
-    position: absolute;
-    bottom: -16px;
-    left: -16px;
-    background: var(--accent);
-    color: white;
-    padding: 14px 18px;
-    border-radius: 8px;
-    text-align: center;
+  .stats-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
   }
-
-  .hero-badge .num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    line-height: 1;
-    display: block;
+  .stat-pill {
+    background: var(--paper-warm); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px 12px; text-align: center;
   }
-
-  .hero-badge .label {
-    font-size: 11px;
-    opacity: 0.9;
-    letter-spacing: 0.05em;
+  .stat-num {
+    font-family: 'DM Serif Display', serif; font-size: 26px;
+    color: var(--accent); line-height: 1; display: block; margin-bottom: 4px;
   }
+  .stat-label { font-size: 11px; color: var(--ink-muted); line-height: 1.4; }
 
-  /* SECTION COMMON */
-  section {
-    padding: 90px 5vw;
-  }
-
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
+  /* ── SECTION COMMON ── */
+  section { padding: 88px 5vw; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-tag {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
   }
-
   .section-title {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(26px, 3vw, 38px);
-    color: var(--ink);
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-    line-height: 1.25;
+    font-size: clamp(24px, 2.8vw, 36px);
+    color: var(--ink); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25;
   }
-
   .section-sub {
-    font-size: 16px;
-    color: var(--ink-soft);
-    max-width: 560px;
-    line-height: 1.75;
-    margin-bottom: 48px;
+    font-size: 15px; color: var(--ink-soft);
+    max-width: 540px; line-height: 1.75; margin-bottom: 44px;
   }
 
-  /* ABOUT */
-  #rajaram-ji {
-    background: var(--paper-warm);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .about-body {
-    font-size: 16px;
-    color: var(--ink-soft);
-    line-height: 1.85;
-  }
-
-  .about-body p { margin-bottom: 18px; }
-  .about-body p:last-child { margin-bottom: 0; }
-
-  .about-highlight {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    color: var(--ink);
-    line-height: 1.5;
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
-    margin: 28px 0;
-    font-style: italic;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 8px;
-  }
-
-  .stat-card {
-    background: var(--paper);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px;
-  }
-
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .stat-label {
-    font-size: 13px;
-    color: var(--ink-muted);
-    line-height: 1.4;
-  }
-
-  /* SERVICES */
-  #hamari-services {
-    background: var(--paper);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
+  /* ── SERVICES ── */
+  #hamari-services { background: var(--paper-warm); border-top: 1px solid var(--border); }
+  .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
   .service-card {
-    background: var(--paper-warm);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 28px 22px;
-    transition: all 0.2s;
-    cursor: default;
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 8px; padding: 26px 20px; transition: all 0.2s;
   }
-
-  .service-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    background: var(--paper);
-  }
-
-  .service-icon {
-    font-size: 28px;
-    margin-bottom: 14px;
-    display: block;
-  }
-
+  .service-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .service-icon { font-size: 26px; margin-bottom: 12px; display: block; }
   .service-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--ink);
-    margin-bottom: 8px;
+    font-family: 'DM Serif Display', serif; font-size: 17px;
+    color: var(--ink); margin-bottom: 7px;
   }
+  .service-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.65; }
 
-  .service-desc {
-    font-size: 13px;
-    color: var(--ink-muted);
-    line-height: 1.65;
-  }
-
-  /* PROPERTIES */
-  #properties {
-    background: var(--paper-warm);
-    border-top: 1px solid var(--border);
-  }
-
-  .properties-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 40px;
-  }
+  /* ── PROPERTIES ── */
+  #properties { background: var(--paper); border-top: 1px solid var(--border); }
+  .properties-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
 
   .property-card {
-    background: var(--paper);
+    background: var(--paper-warm); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden; transition: all 0.25s;
+  }
+  .property-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
+
+  .prop-media {
+    position: relative; height: 240px; overflow: hidden;
+    background: var(--paper-deep); cursor: pointer;
+  }
+  .prop-media img {
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;
+  }
+  .property-card:hover .prop-media img { transform: scale(1.04); }
+  .prop-media video {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .prop-media-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-muted); font-size: 13px; flex-direction: column; gap: 8px;
+  }
+
+  .prop-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--green); color: white;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.04em;
+  }
+  .prop-badge.premium { background: var(--accent); }
+
+  .prop-body { padding: 22px 22px 20px; }
+  .prop-type {
+    font-size: 11px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent); margin-bottom: 5px;
+  }
+  .prop-name {
+    font-family: 'DM Serif Display', serif; font-size: 20px;
+    color: var(--ink); margin-bottom: 10px; line-height: 1.3;
+  }
+  .prop-chips {
+    display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px;
+  }
+  .chip {
+    background: var(--paper-deep); color: var(--ink-soft);
+    font-size: 12px; padding: 4px 11px; border-radius: 20px;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.2s;
   }
-
-  .property-card:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-3px);
+  .prop-price {
+    font-family: 'DM Serif Display', serif; font-size: 22px;
+    color: var(--ink); margin-bottom: 18px;
   }
-
-  .property-photo {
-    height: 200px;
-    background: var(--paper-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ink-muted);
-    font-size: 13px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
+  .prop-price .psf {
+    font-size: 13px; font-weight: 400; font-family: 'DM Sans', sans-serif;
+    color: var(--ink-muted); margin-left: 4px;
   }
-
-  .property-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .prop-note {
+    font-size: 13px; color: var(--ink-muted); margin-bottom: 18px; line-height: 1.6;
   }
-
-  .property-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--green);
-    color: white;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.04em;
+  .btn-wa-prop {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--green-light); color: var(--green);
+    text-decoration: none; padding: 11px 20px; border-radius: 4px;
+    font-size: 14px; font-weight: 500; transition: all 0.2s; width: 100%;
   }
+  .btn-wa-prop:hover { background: var(--green); color: white; }
 
-  .property-badge.sold {
-    background: var(--ink-muted);
+  /* video play overlay */
+  .play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.25); transition: background 0.2s;
   }
-
-  .property-info {
-    padding: 20px;
+  .play-overlay:hover { background: rgba(0,0,0,0.15); }
+  .play-btn {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex; align-items: center; justify-content: center;
   }
+  .play-btn svg { margin-left: 4px; }
 
-  .property-type {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    margin-bottom: 6px;
+  /* lightbox */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.92);
+    align-items: center; justify-content: center;
   }
-
-  .property-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--ink);
-    margin-bottom: 8px;
+  .lightbox.open { display: flex; }
+  .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+  .lightbox-inner img, .lightbox-inner video {
+    max-width: 90vw; max-height: 85vh;
+    border-radius: 6px; object-fit: contain;
   }
-
-  .property-details {
-    font-size: 13px;
-    color: var(--ink-muted);
-    margin-bottom: 16px;
-    line-height: 1.6;
+  .lightbox-close {
+    position: absolute; top: -36px; right: 0;
+    color: white; font-size: 28px; cursor: pointer;
+    background: none; border: none; line-height: 1;
   }
-
-  .property-price {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 16px;
-    font-family: 'DM Serif Display', serif;
+  .lb-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.15); border: none; color: white;
+    font-size: 22px; width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
   }
+  .lb-nav:hover { background: rgba(255,255,255,0.3); }
+  .lb-prev { left: -56px; }
+  .lb-next { right: -56px; }
 
-  .property-price span {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink-muted);
-    font-family: 'DM Sans', sans-serif;
+  /* ── CONTACT ── */
+  #contact { background: var(--ink); }
+  #contact .section-tag { color: var(--accent-light); }
+  #contact .section-title { color: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .contact-body { font-size: 15px; color: rgba(250,247,242,0.65); line-height: 1.85; margin-bottom: 32px; }
+  .contact-details { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .contact-row { display: flex; align-items: center; gap: 14px; font-size: 15px; color: rgba(250,247,242,0.82); }
+  .c-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(250,247,242,0.09);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
   }
-
-  .btn-wa-small {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: var(--green-light);
-    color: var(--green);
-    text-decoration: none;
-    padding: 9px 16px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.2s;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .btn-wa-small:hover { background: var(--green); color: white; }
-
-  .properties-placeholder {
-    background: var(--paper);
-    border: 2px dashed var(--border-strong);
-    border-radius: 8px;
-    padding: 60px 40px;
-    text-align: center;
-    grid-column: 1 / -1;
-  }
-
-  .properties-placeholder p {
-    font-size: 16px;
-    color: var(--ink-soft);
-    margin-bottom: 8px;
-    line-height: 1.75;
-  }
-
-  .properties-placeholder .hint {
-    font-size: 13px;
-    color: var(--ink-muted);
-    margin-bottom: 24px;
-  }
-
-  /* PAST WORK */
-  #pehla-kaam {
-    background: var(--paper);
-    border-top: 1px solid var(--border);
-  }
-
-  .past-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .past-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--paper-warm);
-  }
-
-  .past-photo {
-    height: 160px;
-    background: var(--paper-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ink-muted);
-    font-size: 13px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .past-info {
-    padding: 18px 20px;
-  }
-
-  .past-type {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-muted);
-    margin-bottom: 6px;
-  }
-
-  .past-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 17px;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .past-year {
-    font-size: 13px;
-    color: var(--ink-muted);
-  }
-
-  .past-placeholder {
-    border: 2px dashed var(--border);
-    border-radius: 8px;
-    padding: 40px;
-    text-align: center;
-    color: var(--ink-muted);
-    font-size: 14px;
-    line-height: 1.7;
-    grid-column: 1 / -1;
-  }
-
-  /* CONTACT */
-  #baat-karo {
-    background: var(--ink);
-    color: var(--paper);
-  }
-
-  #baat-karo .section-tag { color: var(--accent-light); }
-  #baat-karo .section-title { color: var(--paper); }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .contact-text {
-    font-size: 16px;
-    color: rgba(250,247,242,0.7);
-    line-height: 1.8;
-    margin-bottom: 36px;
-  }
-
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-
-  .contact-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 15px;
-    color: rgba(250,247,242,0.85);
-  }
-
-  .contact-row .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: rgba(250,247,242,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  .contact-row a {
-    color: inherit;
-    text-decoration: none;
-  }
-
+  .contact-row a { color: inherit; text-decoration: none; }
   .contact-row a:hover { color: white; }
-
   .btn-wa-large {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--green);
-    color: white;
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green); color: white; text-decoration: none;
+    padding: 15px 30px; border-radius: 4px; font-size: 15px;
+    font-weight: 500; transition: all 0.2s;
   }
-
   .btn-wa-large:hover { background: #2d5a3c; transform: translateY(-1px); }
-
-  .contact-note {
-    background: rgba(250,247,242,0.06);
-    border: 1px solid rgba(250,247,242,0.12);
-    border-radius: 8px;
-    padding: 28px;
+  .contact-panel {
+    background: rgba(250,247,242,0.06); border: 1px solid rgba(250,247,242,0.1);
+    border-radius: 10px; padding: 28px;
   }
-
-  .contact-note-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: var(--paper);
-    margin-bottom: 12px;
+  .contact-panel-title {
+    font-family: 'DM Serif Display', serif; font-size: 20px;
+    color: var(--paper); margin-bottom: 10px;
   }
-
-  .contact-note-body {
-    font-size: 14px;
-    color: rgba(250,247,242,0.65);
-    line-height: 1.8;
-  }
-
-  .areas-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
+  .contact-panel-body { font-size: 14px; color: rgba(250,247,242,0.6); line-height: 1.8; }
+  .areas-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .area-tag {
-    background: rgba(250,247,242,0.1);
-    color: rgba(250,247,242,0.8);
-    font-size: 12px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.03em;
+    background: rgba(250,247,242,0.09); color: rgba(250,247,242,0.75);
+    font-size: 12px; padding: 5px 13px; border-radius: 20px;
   }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer {
-    background: #100e0b;
-    padding: 28px 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(250,247,242,0.08);
+    background: #100e0b; padding: 26px 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(250,247,242,0.07);
   }
-
-  footer p {
-    font-size: 13px;
-    color: rgba(250,247,242,0.35);
+  footer p, footer a {
+    font-size: 12px; color: rgba(250,247,242,0.32); text-decoration: none;
   }
+  footer a:hover { color: rgba(250,247,242,0.6); }
 
-  footer a {
-    color: rgba(250,247,242,0.35);
-    text-decoration: none;
-    font-size: 13px;
-  }
+  /* ── ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  footer a:hover { color: rgba(250,247,242,0.7); }
-
-  /* MOBILE NAV OVERLAY */
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 60px; left: 0; right: 0; bottom: 0;
-    background: var(--paper);
-    z-index: 99;
-    padding: 32px 5vw;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .mobile-menu.open { display: flex; }
-
-  .mobile-menu a {
-    font-size: 18px;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .mobile-menu .mobile-wa {
-    margin-top: 16px;
-    background: var(--green);
-    color: white;
-    padding: 16px 24px;
-    border-radius: 4px;
-    text-align: center;
-    border: none;
-    font-weight: 500;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-    .hero-photo-wrap { order: -1; }
-    .hero-photo-frame { width: 240px; height: 300px; margin: 0 auto; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .home-inner { grid-template-columns: 1fr; gap: 48px; }
+    .home-right { order: -1; }
+    .photo-frame { max-height: 280px; aspect-ratio: unset; height: 280px; }
+    .stats-row { grid-template-columns: repeat(3,1fr); }
     .services-grid { grid-template-columns: 1fr 1fr; }
-    .properties-grid { grid-template-columns: 1fr 1fr; }
-    .past-grid { grid-template-columns: 1fr 1fr; }
+    .properties-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .lb-prev { left: -44px; }
+    .lb-next { right: -44px; }
   }
-
   @media (max-width: 600px) {
     section { padding: 60px 5vw; }
     .services-grid { grid-template-columns: 1fr; }
-    .properties-grid { grid-template-columns: 1fr; }
-    .past-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
     .hero-actions { flex-direction: column; }
-    footer { flex-direction: column; gap: 8px; text-align: center; }
-  }
-
-  /* FADE IN ANIMATION */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+    footer { flex-direction: column; gap: 6px; text-align: center; }
+    .lb-prev { left: -36px; }
+    .lb-next { right: -36px; }
   }
 </style>
 </head>
@@ -848,14 +408,13 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#ghar" class="nav-logo">banda<span>property</span>.in</a>
+  <a href="#home" class="nav-logo">banda<span>property</span>.in</a>
   <ul class="nav-links">
-    <li><a href="#ghar">Ghar</a></li>
-    <li><a href="#rajaram-ji">Rajaram Ji</a></li>
-    <li><a href="#hamari-services">Kya Dete Hain</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#hamari-services">Hamari Services</a></li>
     <li><a href="#properties">Properties</a></li>
-    <li><a href="#pehla-kaam">Pehla Kaam</a></li>
-    <li><a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20property%20ke%20baare%20mein%20baat%20karni%20thi" target="_blank" class="nav-wa">WhatsApp</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20property%20ke%20baare%20mein%20baat%20karni%20thi" target="_blank" class="nav-wa">📲 WhatsApp</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -864,25 +423,27 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#ghar" onclick="toggleMenu()">Ghar</a>
-  <a href="#rajaram-ji" onclick="toggleMenu()">Rajaram Ji</a>
-  <a href="#hamari-services" onclick="toggleMenu()">Kya Dete Hain</a>
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#hamari-services" onclick="toggleMenu()">Hamari Services</a>
   <a href="#properties" onclick="toggleMenu()">Properties</a>
-  <a href="#pehla-kaam" onclick="toggleMenu()">Pehla Kaam</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20property%20ke%20baare%20mein%20baat%20karni%20thi" target="_blank" class="mobile-wa">📲 WhatsApp karo</a>
 </div>
 
-<!-- HERO -->
-<section id="ghar">
-  <div class="hero-inner">
-    <div class="hero-text fade-in">
+<!-- HOME (hero + about merged) -->
+<section id="home">
+  <div class="home-inner">
+    <div class="home-left fade-in">
       <div class="hero-tag">Banda · Uttar Pradesh</div>
       <h1 class="hero-h1">
         Banda mein zameen leni ho ya bechni —<br>
         <em>Rajaram ji se poochho.</em>
       </h1>
       <p class="hero-sub">
-        30 saal se yahan kaam kar rahe hain. Koi agency nahi, koi junior nahi — Rajaram ji khud hote hain har deal mein.
+        1990 se yahan kaam kar rahe hain. Banda city ho, Atarra ho, Naraini ho — jahan bhi zameen ka koi mamla ho, ek baar inse zaroor milte hain log.
+      </p>
+      <p class="about-quote">
+        "Jo zameen khud jaanch ke na dein, wo zameen nahi dikhate."
       </p>
       <div class="hero-actions">
         <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20property%20ke%20baare%20mein%20baat%20karni%20thi" target="_blank" class="btn-primary">
@@ -893,61 +454,34 @@
         </a>
       </div>
     </div>
-    <div class="hero-photo-wrap fade-in">
-      <div class="hero-photo-frame">
-        <div class="hero-photo-placeholder">
-          <div class="avatar-circle">RS</div>
-          <p style="font-size:13px; text-align:center; padding: 0 20px;">Rajaram Shivhare<br>Property Consultant</p>
-        </div>
-      </div>
-      <div class="hero-badge">
-        <span class="num">30+</span>
-        <span class="label">Saal ka tajurba</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section id="rajaram-ji">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="fade-in">
-        <div class="section-tag">Rajaram Ji ke baare mein</div>
-        <h2 class="section-title">Banda mein inhe pehchaan ki zaroorat nahi.</h2>
-        <div class="about-body">
-          <p>1990 se yahan kaam kar rahe hain — tab se jab na internet tha, na mobile. Sirf kaam ki wajah se log inhe jaante hain.</p>
-          <div class="about-highlight">"Jo zameen khud jaanch ke na dein, wo zameen nahi dikhate."</div>
-          <p>Banda city ho, Atarra ho, Naraini ho, Baberu ho — jahan bhi zameen ka koi mamla ho, Rajaram ji ko ek baar zaroor poochhte hain log.</p>
-          <p>Registry, mutation, patwari, collector office — sab khud dekhte hain pehle. Tab deal hoti hai.</p>
+    <div class="home-right fade-in">
+      <div class="photo-frame">
+        <img src="images/rajaram.jpeg" alt="Rajaram Shivhare — Property Consultant Banda">
+    </div>
+
+      <div class="stats-row">
+        <div class="stat-pill">
+          <span class="stat-num">30+</span>
+          <span class="stat-label">Saal ka kaam</span>
         </div>
-      </div>
-      <div class="stats-grid fade-in">
-        <div class="stat-card">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Saal se Banda mein kaam</div>
+        <div class="stat-pill">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Deals complete</span>
         </div>
-        <div class="stat-card">
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Deals successfully complete</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Papers personally verified</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Tehsil cover karte hain</div>
+        <div class="stat-pill">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Papers verified</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- HAMARI SERVICES -->
 <section id="hamari-services">
   <div class="section-inner">
-    <div class="section-tag fade-in">Kya dete hain</div>
+    <div class="section-tag fade-in">Hamari Services</div>
     <h2 class="section-title fade-in">Kya dhundh rahe hain aap?</h2>
     <p class="section-sub fade-in">Banda district mein har tarah ki property — seedha Rajaram ji se.</p>
     <div class="services-grid">
@@ -980,55 +514,95 @@
   <div class="section-inner">
     <div class="section-tag fade-in">Abhi available hai</div>
     <h2 class="section-title fade-in">Properties on sale</h2>
-    <p class="section-sub fade-in">Yeh properties abhi sale par hain. Papers khud se check ki hui hain.</p>
-    <div class="properties-grid">
-      <div class="properties-placeholder fade-in">
-        <p style="font-size:18px; font-family:'DM Serif Display',serif; color: var(--ink); margin-bottom: 12px;">Listings abhi update ho rahi hain.</p>
-        <p>Jo bhi available hai — plot, makaan, ya zameen — Rajaram ji se seedha poochho.<br>Woh khud bata denge kya hai aur kya rate chal raha hai.</p>
-        <p class="hint">Nayi properties regularly aati hain. WhatsApp par puch lein.</p>
-        <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20koi%20property%20available%20hai%20kya%20abhi%3F" target="_blank" class="btn-primary" style="display:inline-flex; margin: 0 auto;">
-          📲 Poochho kya available hai
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+    <p class="section-sub fade-in">Yeh properties abhi available hain. Jyada jaankari ke liye WhatsApp karein — Rajaram ji khud batayenge.</p>
 
-<!-- PAST WORK -->
-<section id="pehla-kaam">
-  <div class="section-inner">
-    <div class="section-tag fade-in">Track record</div>
-    <h2 class="section-title fade-in">Pehle ka kaam</h2>
-    <p class="section-sub fade-in">Yeh deals Rajaram ji ke zariye complete hui hain. Buyers aur sellers dono khush rahe — tab hi yahan daal rahe hain.</p>
-    <div class="past-grid">
-      <div class="past-placeholder fade-in">
-        Pichle kuch saalon mein complete hui deals ki photos aur details jald aa rahi hain.<br>
-        <span style="font-size:13px; margin-top: 8px; display:block; color: var(--ink-muted);">Agar aap Rajaram ji ke purane client hain aur apni property share karna chahte hain — WhatsApp karein.</span>
+    <div class="properties-grid">
+
+      <!-- PROPERTY 1: Medical Line Plots -->
+      <div class="property-card fade-in">
+        <div class="prop-media" onclick="openLightbox('plot', 0)">
+          <img src="images/plot-medical-1.jpg" alt="Medical Line Plot Banda" style="display:block">
+          <div class="prop-badge premium">Premium Plotting</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Residential Plot</div>
+          <div class="prop-name">Medical Line, Banda</div>
+          <div class="prop-chips">
+            <span class="chip">Sangeeta Hospital ke peeche</span>
+            <span class="chip">Banda Nursery saamne</span>
+            <span class="chip">Nawab Tank walkway paas</span>
+            <span class="chip">Sirf 8–10 plots bache</span>
+          </div>
+          <div class="prop-price">
+            ₹2,000 <span class="psf">/ sq ft onwards</span>
+          </div>
+          <div class="prop-note">
+            Prime location — medical hospital road par. Sizes alag-alag available hain. Limited plots baaki hain.
+          </div>
+          <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20Medical%20Line%20plot%20ke%20baare%20mein%20jaanna%20tha%20%E2%80%94%20size%20aur%20availability%20bata%20sakte%20hain%3F" target="_blank" class="btn-wa-prop">
+            📲 Size aur rate poochho
+          </a>
+        </div>
       </div>
+
+      <!-- PROPERTY 2: Indira Nagar House -->
+      <div class="property-card fade-in">
+        <div class="prop-media" onclick="openLightbox('house', 0)">
+          <img src="images/house-indira-1.jpg" alt="Indira Nagar House Banda" style="display:block">
+          <div class="prop-badge">For Sale</div>
+          <div class="play-overlay" style="pointer-events:none">
+            <div class="play-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M5 3l11 6-11 6V3z" fill="#1a1510"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-type">Independent House</div>
+          <div class="prop-name">Indira Nagar, Banda</div>
+          <div class="prop-chips">
+            <span class="chip">Good Colony</span>
+            <span class="chip">40×80 ft · 3200 sq ft</span>
+            <span class="chip">Ground + 1st Floor</span>
+            <span class="chip">~₹30K/mo rental</span>
+          </div>
+          <div class="prop-price">
+            ₹1.5 Cr <span class="psf">negotiable</span>
+          </div>
+          <div class="prop-note">
+            Ground floor owner ke liye, pehli manzil mein 8–10 rooms already rented. Achhi rental income wali property.
+          </div>
+          <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20Indira%20Nagar%20wale%20ghar%20ke%20baare%20mein%20baat%20karni%20thi%20%E2%80%94%20kya%20site%20visit%20ho%20sakti%20hai%3F" target="_blank" class="btn-wa-prop">
+            📲 Site visit ke liye poochho
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="baat-karo">
+<section id="contact">
   <div class="section-inner">
     <div class="contact-grid">
       <div class="fade-in">
         <div class="section-tag">Baat karein</div>
         <h2 class="section-title">Koi sawaal ho toh seedha poochho.</h2>
-        <p class="contact-text">Rate kya chal raha hai, kaun si jagah sahi rahegi, papers theek hain ya nahi — yeh sab Rajaram ji khud batate hain. Koi junior nahi, koi assistant nahi.</p>
+        <p class="contact-body">Rate kya chal raha hai, kaun si jagah sahi rahegi, papers theek hain ya nahi — yeh sab Rajaram ji khud batate hain. Koi junior nahi, koi assistant nahi.</p>
         <div class="contact-details">
           <div class="contact-row">
-            <div class="icon">📲</div>
+            <div class="c-icon">📲</div>
             <div>
-              <div style="font-size:12px; opacity:0.5; margin-bottom:2px;">WhatsApp / Call</div>
+              <div style="font-size:12px; opacity:0.45; margin-bottom:2px;">WhatsApp / Call</div>
               <a href="tel:+917985720515">+91 79857 20515</a>
             </div>
           </div>
           <div class="contact-row">
-            <div class="icon">📍</div>
+            <div class="c-icon">📍</div>
             <div>
-              <div style="font-size:12px; opacity:0.5; margin-bottom:2px;">Location</div>
+              <div style="font-size:12px; opacity:0.45; margin-bottom:2px;">Location</div>
               Banda, Uttar Pradesh
             </div>
           </div>
@@ -1037,12 +611,12 @@
           📲 WhatsApp par message karein
         </a>
       </div>
-      <div class="contact-note fade-in">
-        <div class="contact-note-title">Hum Banda district mein kaam karte hain.</div>
-        <div class="contact-note-body">
+      <div class="contact-panel fade-in">
+        <div class="contact-panel-title">Hum Banda district mein kaam karte hain.</div>
+        <div class="contact-panel-body">
           Agar aap Banda ya aaspaas ke kisi bhi area mein property lena ya bechna chahte hain — ek baar zaroor baat karein. Rate, availability, ya sirf advice — sab free hai.
         </div>
-        <div class="areas-list">
+        <div class="areas-wrap">
           <span class="area-tag">Banda City</span>
           <span class="area-tag">Atarra</span>
           <span class="area-tag">Naraini</span>
@@ -1059,31 +633,122 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2025 Rajaram Shivhare — Property Consultant, Banda UP</p>
-  <a href="https://wa.me/917985720515" target="_blank">bandaproperty.in</a>
+  <a href="mailto:">bandaproperty.in</a>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="" style="display:none">
+    <video id="lb-video" controls style="display:none">
+      <source id="lb-video-src" src="" type="video/mp4">
+    </video>
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+  </div>
+</div>
+
 <script>
+  // ── Mobile menu ──
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
-
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobileMenu');
-    const hamburger = document.getElementById('hamburger');
-    if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+    const hb = document.getElementById('hamburger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !hb.contains(e.target)) {
       menu.classList.remove('open');
     }
   });
 
+  // ── Fade in on scroll ──
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Video toggle for house property ──
+  function toggleVideo() {
+    const v = document.getElementById('house-video');
+    const overlay = document.querySelector('#house-media .play-overlay');
+    if (!v) return;
+    if (v.paused) { v.play(); if(overlay) overlay.style.display = 'none'; }
+    else { v.pause(); if(overlay) overlay.style.display = 'flex'; }
+  }
+
+  // ── Lightbox ──
+  let lbImages = [];
+  let lbCurrent = 0;
+
+  // Define image sets per property (update src paths when you add real images)
+  const lightboxSets = {
+    plot: [
+      'images/plot-medical-1.jpeg',
+      'images/plot-medical-2.jpeg',
+      'images/plot-medical-3.jpeg',
+      'images/plot-medical-4.jpeg',
+    ],
+    house: [
+      'images/house-indira-1.jpeg',
+      'videos/house-indira-walkthrough.mp4',
+    ]
+  };
+
+  function openLightbox(set, index) {
+    lbImages = lightboxSets[set] || [];
+    if (!lbImages.length) return;
+    lbCurrent = index;
+    showLbItem();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showLbItem() {
+  const img = document.getElementById('lb-img');
+  const vid = document.getElementById('lb-video');
+  const src = lbImages[lbCurrent];
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
+
+  if (isVideo) {
+    img.style.display = 'none';
+    document.getElementById('lb-video-src').src = src;
+    vid.load();
+    vid.style.display = 'block';
+  } else {
+    vid.style.display = 'none';
+    vid.pause();
+    img.src = src;
+    img.style.display = 'block';
+  }
+
+  const prevBtn = document.querySelector('.lb-prev');
+  const nextBtn = document.querySelector('.lb-next');
+  if(prevBtn) prevBtn.style.display = lbImages.length > 1 ? 'flex' : 'none';
+  if(nextBtn) nextBtn.style.display = lbImages.length > 1 ? 'flex' : 'none';
+}
+
+  function lbNav(dir) {
+    lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+    showLbItem();
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOutside(e) {
+    if (e.target.id === 'lightbox') closeLightbox();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lbNav(-1);
+    if (e.key === 'ArrowRight') lbNav(1);
+  });
 </script>
 </body>
 </html>
