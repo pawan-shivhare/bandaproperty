@@ -146,15 +146,17 @@
   .btn-secondary:hover { background: var(--paper-deep); }
 
   /* right col */
-  .home-right { display: flex; flex-direction: column; gap: 20px; }
+  /* .home-right { display: flex; flex-direction: column; gap: 20px; } */
+  .home-right { display: flex; flex-direction: column; gap: 20px; align-items: center; }
   .photo-frame {
-    width: 100%; aspect-ratio: 3/4; max-height: 400px;
-    background: var(--paper-deep); border-radius: 10px;
-    overflow: hidden; border: 1px solid var(--border);
+    width: 340px; height: 340px;
+    background: var(--paper-deep); border-radius: 50%;
+    overflow: hidden; border: 3px solid var(--accent-light);
     position: relative;
+    margin: 0 auto;
   }
   .photo-frame img {
-    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    width: 100%; height: 100%; object-fit: cover; object-position: center 15%;
   }
   .photo-placeholder {
     width: 100%; height: 100%;
@@ -521,7 +523,7 @@
       <!-- PROPERTY 1: Medical Line Plots -->
       <div class="property-card fade-in">
         <div class="prop-media" onclick="openLightbox('plot', 0)">
-          <img src="images/plot-medical-1.jpg" alt="Medical Line Plot Banda" style="display:block">
+          <img src="images/plot-medical-1.jpeg" alt="Medical Line Plot Banda" style="display:block">
           <div class="prop-badge premium">Premium Plotting</div>
         </div>
         <div class="prop-body">
@@ -548,7 +550,7 @@
       <!-- PROPERTY 2: Indira Nagar House -->
       <div class="property-card fade-in">
         <div class="prop-media" onclick="openLightbox('house', 0)">
-          <img src="images/house-indira-1.jpg" alt="Indira Nagar House Banda" style="display:block">
+          <img src="images/house-indira-1.jpeg" alt="Indira Nagar House Banda" style="display:block">
           <div class="prop-badge">For Sale</div>
           <div class="play-overlay" style="pointer-events:none">
             <div class="play-btn">
