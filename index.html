@@ -146,17 +146,26 @@
   .btn-secondary:hover { background: var(--paper-deep); }
 
   /* right col */
-  /* .home-right { display: flex; flex-direction: column; gap: 20px; } */
-  .home-right { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-  .photo-frame {
+  .home-right { display: flex; flex-direction: column; gap: 20px; }
+  /* .home-right { display: flex; flex-direction: column; gap: 20px; align-items: center; } */
+  /* .photo-frame {
     width: 340px; height: 340px;
     background: var(--paper-deep); border-radius: 50%;
     overflow: hidden; border: 3px solid var(--accent-light);
     position: relative;
     margin: 0 auto;
+  } */
+  .photo-frame {
+    width: 100%; aspect-ratio: 3/4; max-height: 400px;
+    background: var(--paper-deep); border-radius: 10px;
+    overflow: hidden; border: 1px solid var(--border);
+    position: relative;
   }
-  .photo-frame img {
+  /* .photo-frame img {
     width: 100%; height: 100%; object-fit: cover; object-position: center 15%;
+  } */
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
   }
   .photo-placeholder {
     width: 100%; height: 100%;
@@ -384,7 +393,8 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
     .home-inner { grid-template-columns: 1fr; gap: 48px; }
-    .home-right { order: -1; }
+    .home-right { order: 2; }
+    .home-left { order: 1; }
     .photo-frame { max-height: 280px; aspect-ratio: unset; height: 280px; }
     .stats-row { grid-template-columns: repeat(3,1fr); }
     .services-grid { grid-template-columns: 1fr 1fr; }
@@ -442,14 +452,16 @@
         <em>Rajaram ji se poochho.</em>
       </h1>
       <p class="hero-sub">
-        1990 se yahan kaam kar rahe hain. Banda city ho, Atarra ho, Naraini ho — jahan bhi zameen ka koi mamla ho, ek baar inse zaroor milte hain log.
+        2005 se Banda aur aas paas ke area jaise attara, naraini, chitrakoot mein logon ka bharosa. 
+        Chahe residential plot ho, kheti ki zameen ho ya commercial jagah — 
+        yahan har deal seedhi, saaf aur bina jhanjhat ke hoti hai.
       </p>
       <p class="about-quote">
-        "Jo zameen khud jaanch ke na dein, wo zameen nahi dikhate."
+        "Jis zameen par khud bharosa na ho, wo zameen nahi dikhate."
       </p>
       <div class="hero-actions">
         <a href="https://wa.me/917985720515?text=Namaste%20Rajaram%20ji%2C%20property%20ke%20baare%20mein%20baat%20karni%20thi" target="_blank" class="btn-primary">
-          📲 WhatsApp karo
+          📲 WhatsApp karein
         </a>
         <a href="#properties" class="btn-secondary">
           Properties dekhein →
@@ -464,12 +476,12 @@
 
       <div class="stats-row">
         <div class="stat-pill">
-          <span class="stat-num">30+</span>
-          <span class="stat-label">Saal ka kaam</span>
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Saalo se kaam</span>
         </div>
         <div class="stat-pill">
           <span class="stat-num">500+</span>
-          <span class="stat-label">Deals complete</span>
+          <span class="stat-label">Deals</span>
         </div>
         <div class="stat-pill">
           <span class="stat-num">100%</span>
@@ -523,7 +535,7 @@
       <!-- PROPERTY 1: Medical Line Plots -->
       <div class="property-card fade-in">
         <div class="prop-media" onclick="openLightbox('plot', 0)">
-          <img src="images/plot-medical-1.jpeg" alt="Medical Line Plot Banda" style="display:block">
+          <img src="images/plot-medical-4.jpeg" alt="Medical Line Plot Banda" style="display:block">
           <div class="prop-badge premium">Premium Plotting</div>
         </div>
         <div class="prop-body">
@@ -625,6 +637,7 @@
           <span class="area-tag">Baberu</span>
           <span class="area-tag">Tindwari</span>
           <span class="area-tag">Karwi</span>
+          <span class="area-tag">Chitrakoot</span>
           <span class="area-tag">Mataundh</span>
         </div>
       </div>
